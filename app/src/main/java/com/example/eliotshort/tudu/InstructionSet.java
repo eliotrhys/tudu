@@ -29,10 +29,6 @@ public class InstructionSet implements Serializable {
         this.instructionSetName = instructionSetName;
     }
 
-    public void setInstructionList(ArrayList<String> instructionList) {
-        this.instructionList = instructionList;
-    }
-
     public void addInstructionToList(String instruction){
         this.instructionList.add(instruction);
     }

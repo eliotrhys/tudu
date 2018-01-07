@@ -24,15 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         instructionSet = new InstructionSet("RECIPE", new ArrayList());
 
-
-        instructionSet.addInstructionToList("Step 1: \n Buy A Lamp");
-        instructionSet.addInstructionToList("Step 2: \n Put A Bulb In");
-        instructionSet.addInstructionToList("Step 3: \n Plug In The Lamp");
-        instructionSet.addInstructionToList("Step 4: \n Voila! The lamp works now.");
-        instructionSet.addInstructionToList("html");
-        instructionSet.addInstructionToList("c++");
-        instructionSet.addInstructionToList("css");
-        instructionSet.addInstructionToList("javascript");
+//        instructionSet.addInstructionToList("Step 1: \n Buy A Lamp");
 
         arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.helloText, instructionSet.getInstructionList());
 

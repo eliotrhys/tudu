@@ -11,16 +11,12 @@ import java.util.ArrayList;
 
 public class MainMenuActivity extends AppCompatActivity {
 
-    Button createNewTuduButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        createNewTuduButton = findViewById(R.id.createNewTuduButton);
-
-        InstructionList instructionList = new InstructionList();
+        CompleteInstructionList instructionList = new CompleteInstructionList();
         ArrayList<InstructionSet> list = instructionList.getInstructionList();
 
         InstructionListAdapter instructionListAdapter = new InstructionListAdapter(this, list);
@@ -28,6 +24,13 @@ public class MainMenuActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.mainMenuList);
         listView.setAdapter(instructionListAdapter);
 
+    }
+
+    public void getInstructionSet(View listItem){
+        InstructionSet instructionSet = (InstructionSet) listItem.getTag();
+        Intent intent = new Intent(this, instructionSet.getClass());
+//        Intent.putExtra("instructionSet", instructionSet);
+        startActivity(intent);
     }
 
     public void onCreateListButtonClick(View view){
