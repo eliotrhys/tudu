@@ -32,4 +32,12 @@ public class InstructionSet {
         this.instructionList = instructionList;
     }
 
+    public void addInstructionToList(String instruction){
+        this.instructionList.add(instruction);
+    }
+
+    public void removeInstructionFromList(){
+        this.instructionList.remove(0);
+    }
+
 }

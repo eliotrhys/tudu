@@ -12,9 +12,10 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<String> al;
+//    private ArrayList<String> al;
     private ArrayAdapter<String> arrayAdapter;
     private int i;
+    private InstructionSet instructionSet;
 
 
     @Override
@@ -22,18 +23,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        instructionSet = new InstructionSet("RECIPE", new ArrayList());
 
-        al = new ArrayList<>();
-        al.add("Step 1: \n Buy A Lamp");
-        al.add("Step 2: \n Put A Bulb In");
-        al.add("Step 3: \n Plug In The Lamp");
-        al.add("Step 4: \n Voila! The lamp works now.");
-        al.add("html");
-        al.add("c++");
-        al.add("css");
-        al.add("javascript");
 
-        arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.helloText, al );
+        instructionSet.addInstructionToList("Step 1: \n Buy A Lamp");
+        instructionSet.addInstructionToList("Step 2: \n Put A Bulb In");
+        instructionSet.addInstructionToList("Step 3: \n Plug In The Lamp");
+        instructionSet.addInstructionToList("Step 4: \n Voila! The lamp works now.");
+        instructionSet.addInstructionToList("html");
+        instructionSet.addInstructionToList("c++");
+        instructionSet.addInstructionToList("css");
+        instructionSet.addInstructionToList("javascript");
+
+        arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.helloText, instructionSet.getInstructionList() );
 
         SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
 
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void removeFirstObjectInAdapter() {
                 // this is the simplest way to delete an object from the Adapter (/AdapterView)
                 Log.d("LIST", "removed object!");
-                al.remove(0);
+                instructionSet.removeInstructionFromList();
                 arrayAdapter.notifyDataSetChanged();
             }
 
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAdapterAboutToEmpty(int itemsInAdapter) {
                 // Ask for more data here
-                al.add("XML ".concat(String.valueOf(i)));
+                instructionSet.addInstructionToList("XML ".concat(String.valueOf(i)));
                 arrayAdapter.notifyDataSetChanged();
                 Log.d("LIST", "notified");
                 i++;
