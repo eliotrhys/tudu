@@ -1,12 +1,13 @@
 package com.example.eliotshort.tudu;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by eliotshort on 05/01/2018.
  */
 
-public class InstructionSet {
+public class InstructionSet implements Serializable {
 
     String instructionSetName;
     ArrayList<String> instructionList;

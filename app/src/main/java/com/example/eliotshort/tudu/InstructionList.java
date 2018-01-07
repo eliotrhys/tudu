@@ -8,17 +8,22 @@ import java.util.ArrayList;
 
 public class InstructionList {
 
-    ArrayList<InstructionSet> instructionList;
+    ArrayList<InstructionSet> list;
+    InstructionSet recipe;
 
-    public InstructionList(ArrayList instructionList){
-        this.instructionList = instructionList;
+    public InstructionList(){
+
+        recipe = new InstructionSet("Recipe", new ArrayList());
+        recipe.addInstructionToList("Step 1 \n Buy flour.");
+        recipe.addInstructionToList("Step 2 \n Bake a fucking cake.");
+        recipe.addInstructionToList("Step 3 \n Eat");
+        list = new ArrayList<InstructionSet>();
+        list.add(recipe);
+
     }
 
     public ArrayList<InstructionSet> getInstructionList() {
-        return instructionList;
-    }
 
-    public void setInstructionList(ArrayList<InstructionSet> instructionList) {
-        this.instructionList = instructionList;
+        return list;
     }
 }

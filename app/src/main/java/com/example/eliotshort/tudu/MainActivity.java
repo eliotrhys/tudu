@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-//    private ArrayList<String> al;
     private ArrayAdapter<String> arrayAdapter;
     private int i;
     private InstructionSet instructionSet;
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         instructionSet.addInstructionToList("css");
         instructionSet.addInstructionToList("javascript");
 
-        arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.helloText, instructionSet.getInstructionList() );
+        arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.helloText, instructionSet.getInstructionList());
 
         SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
 
