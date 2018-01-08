@@ -25,7 +25,7 @@ public class InstructionSet implements Serializable {
     public ArrayList<String> instructionList;
 
 
-    public InstructionSet(int id, String instructionSetName, ArrayList instructionList){
+    public InstructionSet(String instructionSetName, ArrayList instructionList){
         this.id = id;
         this.instructionSetName = instructionSetName;
         this.instructionList = instructionList;
@@ -61,6 +61,22 @@ public class InstructionSet implements Serializable {
 
     public void removeInstructionFromList(){
         this.instructionList.remove(0);
+    }
+
+    private static InstructionSet addInstructionSet(final AppDatabase db, InstructionSet instructionSet) {
+        db.instructionSetDao().insertAll(instructionSet);
+        return instructionSet;
+    }
+
+    private static void populateWithTestData(AppDatabase db) {
+        ArrayList<String> testArrayList = new ArrayList<>();
+        testArrayList.add("Buy flour");
+        testArrayList.add("Put in the oven.");
+        testArrayList.add("Enjoy cake.");
+        InstructionSet instructionSet = new InstructionSet("Boilerplate", new ArrayList<>());
+        instructionSet.setInstructionSetName("Cake Recipe");
+        instructionSet.setInstructionList(testArrayList);
+        addInstructionSet(db, instructionSet);
     }
 
 }

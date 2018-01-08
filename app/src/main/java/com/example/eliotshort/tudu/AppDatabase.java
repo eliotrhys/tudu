@@ -3,6 +3,7 @@ package com.example.eliotshort.tudu;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
+import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
 
 /**
@@ -10,6 +11,7 @@ import android.content.Context;
  */
 
 @Database(entities = {InstructionSet.class}, version = 1)
+@TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;
