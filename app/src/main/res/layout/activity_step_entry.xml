@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.eliotshort.tudu.StepEntryActivity">
+    android:background="#161616"
+    tools:context="com.example.eliotshort.tudu.Activities.StepEntryActivity">
 
     <TextView
         android:id="@+id/mainRow"
@@ -14,6 +15,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
         android:text="Step 1"
+        android:textColor="@android:color/white"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/tuduNamer"
+        android:id="@+id/stepEntry"
         android:layout_width="345dp"
         android:layout_height="228dp"
         android:layout_marginBottom="8dp"
@@ -32,6 +34,7 @@
         android:ems="10"
         android:hint="Type Your Instructions Here..."
         android:inputType="textPersonName"
+        android:background="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
@@ -46,24 +49,28 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
+        android:onClick="onClickAddStepButton"
         android:text="Finish List"
+        android:textColor="@android:color/white"
+        android:background="#57de49"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tuduNamer" />
+        app:layout_constraintTop_toBottomOf="@+id/stepEntry" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="142dp"
-        android:layout_height="110dp"
+        android:id="@+id/nrknja"
+        android:layout_width="143dp"
+        android:layout_height="113dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="ADD STEP"
+        android:text="Add Step"
+        android:textColor="@android:color/white"
+        android:background="#57de49"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.931"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tuduNamer" />
+        app:layout_constraintStart_toEndOf="@+id/createNewTuduButton"
+        app:layout_constraintTop_toBottomOf="@+id/stepEntry" />
+
 </android.support.constraint.ConstraintLayout>

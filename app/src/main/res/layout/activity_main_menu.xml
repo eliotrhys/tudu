@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.eliotshort.tudu.MainMenuActivity">
+    android:background="#161616"
+    tools:context="com.example.eliotshort.tudu.Activities.MainMenuActivity">
 
     <ListView
         android:id="@+id/mainMenuList"
-        android:layout_width="361dp"
+        android:layout_width="wrap_content"
         android:layout_height="425dp"
         android:layout_marginBottom="8dp"
+        android:background="#2d2d2d"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
@@ -27,6 +29,8 @@
         android:layout_marginStart="8dp"
         android:onClick="onCreateListButtonClick"
         android:text="Create New tüdü"
+        android:textColor="@android:color/white"
+        android:background="#57de49"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.eliotshort.tudu.NameTheListActivity">
+    android:background="#161616"
+    tools:context="com.example.eliotshort.tudu.Activities.NameTheListActivity">
 
     <EditText
-        android:id="@+id/tuduNamer"
+        android:id="@+id/stepEntry"
         android:layout_width="310dp"
         android:layout_height="74dp"
         android:layout_marginBottom="8dp"
@@ -17,6 +18,7 @@
         android:ems="10"
         android:hint="Enter the name of your new tüdü..."
         android:inputType="textPersonName"
+        android:background="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/createNewTuduButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +33,8 @@
         android:layout_marginStart="8dp"
         android:onClick="onNameButtonClick"
         android:text="ADD STEPS"
+        android:textColor="@android:color/white"
+        android:background="#57de49"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"

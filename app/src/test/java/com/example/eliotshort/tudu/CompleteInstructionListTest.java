@@ -1,5 +1,8 @@
 package com.example.eliotshort.tudu;
 
+import com.example.eliotshort.tudu.TuduObjects.CompleteInstructionList;
+import com.example.eliotshort.tudu.TuduObjects.InstructionSet;
+
 import org.junit.Before;
 import org.junit.Test;
 

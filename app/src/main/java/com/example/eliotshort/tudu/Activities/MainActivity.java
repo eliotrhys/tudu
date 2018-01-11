@@ -1,4 +1,4 @@
-package com.example.eliotshort.tudu;
+package com.example.eliotshort.tudu.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import com.example.eliotshort.tudu.TuduObjects.InstructionSet;
+import com.example.eliotshort.tudu.R;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
@@ -24,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
         instructionSet = new InstructionSet("RECIPE", new ArrayList());
 
-//        instructionSet.addInstructionToList("Step 1: \n Buy A Lamp");
+        instructionSet.addInstructionToList("Step 1: \n Buy Flour");
+        instructionSet.addInstructionToList("Step 2: \n Put In Oven");
+        instructionSet.addInstructionToList("Step 3: \n Cook It");
+        instructionSet.addInstructionToList("Step 4: \n Eat The Cake");
 
         arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.helloText, instructionSet.getInstructionList());
 
