@@ -38,7 +38,7 @@ public class StepEntryActivity extends AppCompatActivity {
         instructionSet.addInstructionToList(result);
         Intent intent = new Intent(this, StepEntryActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable("value", instructionSet);
+        bundle.putSerializable("MySet", instructionSet);
         intent.putExtras(bundle);
         startActivity(intent);
     }
@@ -48,7 +48,7 @@ public class StepEntryActivity extends AppCompatActivity {
         instructionSet.addInstructionToList(result);
         Intent intent = new Intent(this, MainMenuActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable("value", instructionSet);
+        bundle.putSerializable("MySet", instructionSet);
         intent.putExtras(bundle);
         startActivity(intent);
     }

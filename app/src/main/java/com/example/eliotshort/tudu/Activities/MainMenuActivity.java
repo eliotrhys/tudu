@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class MainMenuActivity extends AppCompatActivity {
 
     CompleteInstructionList instructionList;
+    InstructionSet instructionSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,13 @@ public class MainMenuActivity extends AppCompatActivity {
 
         list.add(recipeSet);
         list.add(morningSet);
+
+        Intent i = getIntent();
+        instructionSet = (InstructionSet)i.getSerializableExtra("MySet");
+
+        if (instructionSet != null){
+            list.add(instructionSet);
+        }
 
         InstructionListAdapter instructionListAdapter = new InstructionListAdapter(this, list);
 
