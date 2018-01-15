@@ -10,6 +10,8 @@ import android.widget.EditText;
 import com.example.eliotshort.tudu.R;
 import com.example.eliotshort.tudu.TuduObjects.InstructionSet;
 
+import java.io.Serializable;
+
 public class StepEntryActivity extends AppCompatActivity {
 
     EditText stepEntry;
@@ -26,13 +28,8 @@ public class StepEntryActivity extends AppCompatActivity {
         addStepButton = findViewById(R.id.addStepButton);
         finishListButton = findViewById(R.id.nameListButton);
 
-        instructionSet = null;
-
-        Intent intent = this.getIntent();
-        Bundle bundle = intent.getExtras();
-
-        assert bundle != null;
-        InstructionSet instructionSet = (InstructionSet)bundle.getSerializable("value");
+        Intent i = getIntent();
+        instructionSet = (InstructionSet)i.getSerializableExtra("MySet");
 
     }
 

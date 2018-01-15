@@ -48,15 +48,6 @@ public class MainMenuActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.mainMenuList);
         listView.setAdapter(instructionListAdapter);
 
-        Intent intent = this.getIntent();
-        Bundle bundle = intent.getExtras();
-
-//        InstructionSet newSet = (InstructionSet)bundle.getSerializable("value");
-//
-//        if (bundle != null){
-//            list.add(newSet);
-//        }
-
     }
 
 //    public void getInstructionSet(View listItem){

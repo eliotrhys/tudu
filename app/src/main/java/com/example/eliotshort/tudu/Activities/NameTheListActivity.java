@@ -33,9 +33,7 @@ public class NameTheListActivity extends AppCompatActivity {
         String result = tuduNamer.getText().toString();
         instructionSet.setInstructionSetName(result);
         Intent intent = new Intent(this, StepEntryActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("value", instructionSet);
-        intent.putExtras(bundle);
+        intent.putExtra("MySet", instructionSet);
         startActivity(intent);
     }
 
