@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/stepEntry"
+        android:id="@+id/tuduNamer"
         android:layout_width="345dp"
         android:layout_height="228dp"
         android:layout_marginBottom="8dp"
@@ -43,34 +43,35 @@
         app:layout_constraintVertical_bias="0.063" />
 
     <Button
-        android:id="@+id/createNewTuduButton"
+        android:id="@+id/nameListButton"
         android:layout_width="142dp"
         android:layout_height="110dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
-        android:onClick="onClickAddStepButton"
+        android:background="#57de49"
+        android:onClick="onClickFinishListButton"
         android:text="Finish List"
         android:textColor="@android:color/white"
-        android:background="#57de49"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stepEntry" />
+        app:layout_constraintTop_toBottomOf="@+id/tuduNamer" />
 
     <Button
-        android:id="@+id/nrknja"
+        android:id="@+id/addStepButton"
         android:layout_width="143dp"
         android:layout_height="113dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
+        android:background="#57de49"
+        android:onClick="onClickAddStepButton"
         android:text="Add Step"
         android:textColor="@android:color/white"
-        android:background="#57de49"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/createNewTuduButton"
-        app:layout_constraintTop_toBottomOf="@+id/stepEntry" />
+        app:layout_constraintStart_toEndOf="@+id/nameListButton"
+        app:layout_constraintTop_toBottomOf="@+id/tuduNamer" />
 
 </android.support.constraint.ConstraintLayout>

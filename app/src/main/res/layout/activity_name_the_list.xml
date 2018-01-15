@@ -8,7 +8,7 @@
     tools:context="com.example.eliotshort.tudu.Activities.NameTheListActivity">
 
     <EditText
-        android:id="@+id/stepEntry"
+        android:id="@+id/tuduNamer"
         android:layout_width="310dp"
         android:layout_height="74dp"
         android:layout_marginBottom="8dp"
@@ -19,13 +19,13 @@
         android:hint="Enter the name of your new tüdü..."
         android:inputType="textPersonName"
         android:background="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/createNewTuduButton"
+        app:layout_constraintBottom_toTopOf="@+id/nameListButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/createNewTuduButton"
+        android:id="@+id/nameListButton"
         android:layout_width="157dp"
         android:layout_height="68dp"
         android:layout_marginBottom="108dp"

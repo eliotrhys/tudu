@@ -8,39 +8,50 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.eliotshort.tudu.R;
-import com.example.eliotshort.tudu.TuduObjects.CompleteInstructionList;
 import com.example.eliotshort.tudu.TuduObjects.InstructionSet;
 
 public class StepEntryActivity extends AppCompatActivity {
 
     EditText stepEntry;
     Button addStepButton;
+    Button finishListButton;
     InstructionSet instructionSet;
-    CompleteInstructionList instructionList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_entry);
 
-        stepEntry = findViewById(R.id.stepEntry);
-        addStepButton = findViewById(R.id.createNewTuduButton);
+        stepEntry = findViewById(R.id.tuduNamer);
+        addStepButton = findViewById(R.id.addStepButton);
+        finishListButton = findViewById(R.id.nameListButton);
+
+        instructionSet = null;
 
         Intent intent = this.getIntent();
         Bundle bundle = intent.getExtras();
 
-        CompleteInstructionList instructionList = (CompleteInstructionList) bundle.getSerializable("value");
-        InstructionSet instructionSet = (InstructionSet) getIntent().getSerializableExtra("serialize_data");
+        assert bundle != null;
+        InstructionSet instructionSet = (InstructionSet)bundle.getSerializable("value");
 
     }
 
     public void onClickAddStepButton(View view){
         String result = stepEntry.getText().toString();
         instructionSet.addInstructionToList(result);
-        instructionList.addTudu(instructionSet);
+        Intent intent = new Intent(this, StepEntryActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("value", instructionSet);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    public void onClickFinishListButton(View view){
+        String result = stepEntry.getText().toString();
+        instructionSet.addInstructionToList(result);
         Intent intent = new Intent(this, MainMenuActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable("value", instructionList);
+        bundle.putSerializable("value", instructionSet);
         intent.putExtras(bundle);
         startActivity(intent);
     }

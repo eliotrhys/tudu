@@ -22,9 +22,6 @@ public class MainMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        Intent intent = this.getIntent();
-        Bundle bundle = intent.getExtras();
-
         CompleteInstructionList instructionList = new CompleteInstructionList();
         ArrayList<InstructionSet> list = instructionList.getInstructionList();
 
@@ -36,7 +33,6 @@ public class MainMenuActivity extends AppCompatActivity {
 
         ArrayList<String> morning = new ArrayList<>();
         morning.add("Wake up.");
-
         morning.add("Brush teeth.");
         morning.add("Get showered");
         morning.add("Leave house.");
@@ -52,6 +48,15 @@ public class MainMenuActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.mainMenuList);
         listView.setAdapter(instructionListAdapter);
 
+        Intent intent = this.getIntent();
+        Bundle bundle = intent.getExtras();
+
+//        InstructionSet newSet = (InstructionSet)bundle.getSerializable("value");
+//
+//        if (bundle != null){
+//            list.add(newSet);
+//        }
+
     }
 
 //    public void getInstructionSet(View listItem){
@@ -63,14 +68,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
     public void onCreateListButtonClick(View view){
         Intent intent = new Intent(this, NameTheListActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("value", instructionList);
-        intent.putExtras(bundle);
         startActivity(intent);
     }
-
-
-
-
 
 }

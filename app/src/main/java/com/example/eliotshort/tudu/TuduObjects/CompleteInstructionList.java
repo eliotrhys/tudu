@@ -7,10 +7,9 @@ import java.util.ArrayList;
  * Created by eliotshort on 05/01/2018.
  */
 
-public class CompleteInstructionList implements Serializable {
+public class CompleteInstructionList {
 
     ArrayList<InstructionSet> list;
-
 
     public CompleteInstructionList(){
         this.list = new ArrayList<InstructionSet>();

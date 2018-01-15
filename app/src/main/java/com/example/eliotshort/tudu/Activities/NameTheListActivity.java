@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.eliotshort.tudu.TuduObjects.CompleteInstructionList;
 import com.example.eliotshort.tudu.TuduObjects.InstructionSet;
 import com.example.eliotshort.tudu.R;
 
@@ -16,22 +16,17 @@ public class NameTheListActivity extends AppCompatActivity {
 
     EditText tuduNamer;
     InstructionSet instructionSet;
-    CompleteInstructionList instructionList;
+    Button nameButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_name_the_list);
 
+        nameButton = findViewById(R.id.nameListButton);
+        tuduNamer = findViewById(R.id.tuduNamer);
+
         instructionSet = new InstructionSet("Placeholder", new ArrayList());
-
-        Intent intent = this.getIntent();
-        Bundle bundle = intent.getExtras();
-
-        CompleteInstructionList instructionList = (CompleteInstructionList) bundle.getSerializable("value");
-
-        tuduNamer = findViewById(R.id.stepEntry);
-
     }
 
     public void onNameButtonClick(View view){
@@ -39,9 +34,9 @@ public class NameTheListActivity extends AppCompatActivity {
         instructionSet.setInstructionSetName(result);
         Intent intent = new Intent(this, StepEntryActivity.class);
         Bundle bundle = new Bundle();
-        intent.putExtra("serialize_data", instructionSet);
-        bundle.putSerializable("value", instructionList);
+        bundle.putSerializable("value", instructionSet);
         intent.putExtras(bundle);
         startActivity(intent);
     }
+
 }
